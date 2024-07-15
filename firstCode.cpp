@@ -36,12 +36,58 @@ void setup() {
 
 void loop() {
 
-  moveToDegree(180);
-  delay(2000); 
+  runForward(500);
+  delay(500);
+
+  runBackward(500);
+  delay(500); 
   
+  runRight(1000);
+  delay(500);
+
+  runForward(500);
+  delay(500);
+
+  runBackward(500);
+  delay(500); 
   
-  moveToDegree(0);
-  delay(2000); 
+  runRight(500);
+  delay(500);
+
+  runForward(500);
+  delay(500);
+
+  runBackward(500);
+  delay(500);
+
+  runLeft(1000);
+  delay(500);
+
+  turnClockwise(2000);
+  delay(500);
+
+  runForward(2000);
+  delay(500);
+
+  runBackward(500);
+  delay(500);
+
+  runRight(500);
+  delay(500);
+
+  runForward(500);
+  delay(500);
+
+  runBackward(500);
+  delay(500);
+
+  runRight(500);
+  delay(500);
+
+  runForward(500);
+  delay(500);
+
+  
 }
 
 
@@ -66,8 +112,86 @@ void moveToDegree(float degree) {
 
 
 
-// TEST THIS FUNCTION ONLY. You will need to call the function in order to run it as this is only the function definition
+////RunForward function
 void runForward(unsigned long runTime) {
+
+int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
+stepper1.setSpeed(RunSpeed);
+stepper2.setSpeed(RunSpeed);
+stepper3.setSpeed(-RunSpeed);
+stepper4.setSpeed(-RunSpeed);
+
+unsigned long startTime = millis();
+
+while(millis()-startTime<runTime) {
+    stepper1.runSpeed();
+    stepper2.runSpeed();
+    stepper3.runSpeed();
+    stepper4.runSpeed();
+
+}
+
+stepper1.setSpeed(0);
+stepper2.setSpeed(0);
+stepper3.setSpeed(0);
+stepper4.setSpeed(0);
+
+}
+
+//RunBackward function 
+void runBackward(unsigned long runTime) {
+
+int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
+stepper1.setSpeed(-RunSpeed);
+stepper2.setSpeed(-RunSpeed);
+stepper3.setSpeed(RunSpeed);
+stepper4.setSpeed(RunSpeed);
+
+unsigned long startTime = millis();
+
+while(millis()-startTime<runTime) {
+    stepper1.runSpeed();
+    stepper2.runSpeed();
+    stepper3.runSpeed();
+    stepper4.runSpeed();
+
+}
+
+stepper1.setSpeed(0);
+stepper2.setSpeed(0);
+stepper3.setSpeed(0);
+stepper4.setSpeed(0);
+
+}
+
+//runLeft function
+void runLeft(unsigned long runTime) {
+
+int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
+stepper1.setSpeed(-RunSpeed);
+stepper2.setSpeed(-RunSpeed);
+stepper3.setSpeed(-RunSpeed);
+stepper4.setSpeed(-RunSpeed);
+
+unsigned long startTime = millis();
+
+while(millis()-startTime<runTime) {
+    stepper1.runSpeed();
+    stepper2.runSpeed();
+    stepper3.runSpeed();
+    stepper4.runSpeed();
+
+}
+
+stepper1.setSpeed(0);
+stepper2.setSpeed(0);
+stepper3.setSpeed(0);
+stepper4.setSpeed(0);
+
+}
+
+//runRight function
+void runRight(unsigned long runTime) {
 
 int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
 stepper1.setSpeed(RunSpeed);
@@ -91,3 +215,58 @@ stepper3.setSpeed(0);
 stepper4.setSpeed(0);
 
 }
+
+//turnClockwise function
+void turnClockwise(unsigned long runTime) {
+
+int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
+stepper1.setSpeed(-RunSpeed);
+stepper2.setSpeed(RunSpeed);
+stepper3.setSpeed(-RunSpeed);
+stepper4.setSpeed(RunSpeed);
+
+unsigned long startTime = millis();
+
+while(millis()-startTime<runTime) {
+    stepper1.runSpeed();
+    stepper2.runSpeed();
+    stepper3.runSpeed();
+    stepper4.runSpeed();
+
+}
+
+stepper1.setSpeed(0);
+stepper2.setSpeed(0);
+stepper3.setSpeed(0);
+stepper4.setSpeed(0);
+
+}
+
+//turnAntiClockwise function
+void turnAntiClockwise(unsigned long runTime) {
+
+int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
+stepper1.setSpeed(RunSpeed);
+stepper2.setSpeed(-RunSpeed);
+stepper3.setSpeed(RunSpeed);
+stepper4.setSpeed(-RunSpeed);
+
+unsigned long startTime = millis();
+
+while(millis()-startTime<runTime) {
+    stepper1.runSpeed();
+    stepper2.runSpeed();
+    stepper3.runSpeed();
+    stepper4.runSpeed();
+
+}
+
+stepper1.setSpeed(0);
+stepper2.setSpeed(0);
+stepper3.setSpeed(0);
+stepper4.setSpeed(0);
+
+}
+
+
+ 
