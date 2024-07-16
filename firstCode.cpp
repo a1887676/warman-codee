@@ -195,8 +195,8 @@ void runRight(unsigned long runTime) {
 
 int RunSpeed = 50; //USE THIS TO CHANGE SPEED THAT MOTOR RUNS AT (max speed is 150 as set by "setMaxSpeed" class function)
 stepper1.setSpeed(RunSpeed);
-stepper2.setSpeed(RunSpeed);
-stepper3.setSpeed(RunSpeed);
+stepper2.setSpeed(75);
+stepper3.setSpeed(25);
 stepper4.setSpeed(RunSpeed);
 
 unsigned long startTime = millis();
